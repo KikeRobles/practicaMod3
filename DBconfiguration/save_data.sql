@@ -22,6 +22,7 @@ VALUES
 ('Héctor Serrano', 'hector.serrano19@example.com', '1234567808', '1982-02-11'),
 ('Patricia Vega', 'patricia.vega20@example.com', '1234567809', '1990-09-05');
 
+
 -- Insertar datos en la tabla credenciales
 INSERT INTO credenciales (id_usuario, username, password_hash)
 VALUES
@@ -44,4 +45,4 @@ VALUES
 (17, 'ricardo.vargas17', 'hash_ricardo_vargas'),
 (18, 'daniela.flores18', 'hash_daniela_flores'),
 (19, 'hector.serrano19', 'hash_hector_serrano'),
-(20, 'patricia.vega20', 'hash_patricia_vega'); 
+(20, 'patricia.vega20', 'hash_patricia_vega');

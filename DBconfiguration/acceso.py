@@ -1,12 +1,20 @@
+# pip install psycopg2
 import psycopg2
+
+
 import getpass
 
-# Configuración de conexión a la base de datos en Docker
+
+# pip install stdiomask
+import stdiomask
+
+
 DB_HOST = "localhost"
 DB_PORT = "5432"
 DB_NAME = "credenciales"
 DB_USER = 'Admin'
 DB_PASSWORD = "p4ssw0rdDB"
+
 
 def conectar_db():
     """Conecta a la base de datos PostgreSQL y retorna la conexión."""
@@ -21,8 +29,9 @@ def conectar_db():
         return conn
     except Exception as e:
         print(e)
-        #print("Error de conexión a la base de datos:", e)
+        print("Error de conexión a la base de datos:", e)
         return None
+
 
 def obtener_datos_usuario(username, password):
     """Consulta la base de datos para obtener los datos de un usuario a partir de sus credenciales."""
@@ -30,11 +39,11 @@ def obtener_datos_usuario(username, password):
     if not conn:
         return
 
+
     try:
         cursor = conn.cursor()
 
-        # Verificar si el usuario y contraseña existen en la tabla
-        credenciales
+
         query = """
         SELECT u.id_usuario, u.nombre, u.correo, u.telefono,
         u.fecha_nacimiento
@@ -44,6 +53,7 @@ def obtener_datos_usuario(username, password):
         """
         cursor.execute(query, (username, password))
         usuario = cursor.fetchone()
+
 
         if usuario:
             print("\nDatos del usuario encontrado:")
@@ -61,13 +71,13 @@ def obtener_datos_usuario(username, password):
     except Exception as e:
         print("Error al consultar la base de datos:", e)
 
+
 if __name__ == "__main__":
     print("Inicio de sesión en la base de datos")  
    
-    # Solicitar credenciales al usuario
     username = input("Ingrese su usuario: ")
-    password = getpass.getpass("Ingrese su contraseña: ") # No muestra la contraseña al escribir
+    password = getpass.getpass("Ingrese su contraseña: ")
+    #password = input("Ingrese su contraseña: ")
+    #password = stdiomask.getpass(prompt="Ingrese su contraseña: ", mask="*")
    
-    # Consultar la base de datos
     obtener_datos_usuario(username, password)
-
