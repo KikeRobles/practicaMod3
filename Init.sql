@@ -6,7 +6,7 @@ CREATE TABLE usuarios (
     telefono VARCHAR(15),
     fecha_nacimiento DATE
 );
- 
+
 -- Tabla para almacenar usuarios y contraseñas
 CREATE TABLE credenciales(
     id_credencial SERIAL PRIMARY KEY,
