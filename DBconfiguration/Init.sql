@@ -1,6 +1,7 @@
 -- Tabla para almacenar datos de usuarios
 CREATE TABLE usuarios (
     id_usuario SERIAL PRIMARY KEY,
+    id_puesto INT NOT NULL,
     nombre VARCHAR(100) NOT NULL,
     correo VARCHAR(255) UNIQUE,
     telefono VARCHAR(15),

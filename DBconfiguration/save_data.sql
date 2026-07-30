@@ -49,7 +49,7 @@ VALUES
 
 
 -- Insertar datos en la tabla puestos
-INSERT INTO puestos (nombre_puesto)
+INSERT INTO puestos(nombre_puesto)
 VALUES
 ('Director General'),
 ('Instructor'),
