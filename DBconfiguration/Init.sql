@@ -1,3 +1,9 @@
+-- Tabla para almacenar los puestos de trabajo
+CREATE TABLE puestos(
+    id_puesto SERIAL PRIMARY KEY,
+    nombre_puesto VARCHAR(255) UNIQUE NOT NULL
+);
+
 -- Tabla para almacenar datos de usuarios
 CREATE TABLE usuarios (
     id_usuario SERIAL PRIMARY KEY,
@@ -18,8 +24,3 @@ CREATE TABLE credenciales(
     FOREIGN KEY (id_usuario) REFERENCES usuarios (id_usuario)
 );
 
--- Tabla para almacenar los puestos de trabajo
-CREATE TABLE puestos(
-    id_puesto SERIAL PRIMARY KEY,
-    nombre_puesto VARCHAR(255) UNIQUE NOT NULL
-);
