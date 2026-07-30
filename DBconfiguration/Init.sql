@@ -5,6 +5,7 @@ CREATE TABLE usuarios (
     correo VARCHAR(255) UNIQUE,
     telefono VARCHAR(15),
     fecha_nacimiento DATE
+    FOREIGN KEY (id_puesto) REFERENCES puestos (id_puesto)    
 );
 
 -- Tabla para almacenar usuarios y contraseñas
@@ -14,4 +15,10 @@ CREATE TABLE credenciales(
     username VARCHAR(50) UNIQUE NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
     FOREIGN KEY (id_usuario) REFERENCES usuarios (id_usuario)
+);
+
+-- Tabla para almacenar los puestos de trabajo
+CREATE TABLE puestos(
+    id_puesto SERIAL PRIMARY KEY,
+    nombre_puesto VARCHAR(255) UNIQUE NOT NULL
 );
